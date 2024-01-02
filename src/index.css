@@ -26,6 +26,22 @@ body{
     color: #ccc;
 }
 
+::-webkit-scrollbar{
+    width: 6px;
+}
+::-webkit-scrollbar-track{
+    background-color: #202225;
+}
+
+::-webkit-scrollbar-thumb{
+    background: #414549;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background: #b9aaff;
+}
+
 .cardBg{
     background-color: #414549;
 }
@@ -88,15 +104,7 @@ body{
     opacity: 1;
 }
 
-/* @keyframes _background-pan_bozsq_1 {
-    0% {
-        background-position: 0% center;
-    }
-    
-    100% {
-        background-position: -200% center;
-    }
-} */
+
 
 .projectSection{
     border-color: hsla(0,0%,100%,.2);
@@ -117,7 +125,7 @@ body{
 }
 
 .prBg{
-    background-image: url('./../src/assets/finalPersonal.png');
+    background-image: url('./../src/assets/finalPersonal.webp');
     background-position: top center;
     background-repeat: no-repeat;
     background-size: cover;

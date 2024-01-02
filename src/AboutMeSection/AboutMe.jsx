@@ -4,10 +4,11 @@ import {RiTwitterXFill} from 'react-icons/ri'
 import {IoMdContact} from 'react-icons/io'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import cv from './../assets/kaifShaikhResume.pdf'
+import cv from './../assets/kaifShaik-Resume.pdf'
 
 
 const AboutMe = () => {
+  const skills = ['HTML','CSS','JS','TAILWIND CSS','REACT JS','SASS','REDUX TOOLKIT','GIT','FIGMA','GITHUB','TYPESCRIPT']
   let localAnimationn = {
     initial : {opacity:0,scale:0.2,},
     viewport : {once:true}, 
@@ -35,7 +36,9 @@ const AboutMe = () => {
             Shaikh Mohd-Kaif
           </h1>
           <p className="mb-3">
-            Hello there! Welcome to my Profile. I'm shaikh Mohd Kaif, a curious
+            Hello there! Welcome to my Profile. I'm shaikh Mohd Kaif,
+            <span className='font-semibold text-[--primary-color]'> A Self Taught Developer </span> 
+            and curious,
             explorer deeply immersed in the world of web development. My compass
             is set towards creating exceptional digital experiences that leave a
             mark.
@@ -91,35 +94,12 @@ const AboutMe = () => {
             <h2 className="text-[25px] font-semibold text-[--primary-color] mt-2 pb-2 border-b p-2">
               Skills
             </h2>
+            {/*  */}
 
             <div className="skills flex flex-wrap gap-4 mt-6 items-center justify-start md:justify-start overflow-auto lg:overflow-hidden ">
-              <div className="skill html px-4 py-1 border-2 border-[#999] rounded-md text-md text-[#999] font-bold hover:border-[--primary-color] hover:text-[--primary-color] cursor-pointer">
-                HTML
-              </div>
-              <div className="skill html px-4 py-1 border-2 border-[#999] rounded-md text-md text-[#999] font-bold hover:border-[--primary-color] hover:text-[--primary-color] cursor-pointer">
-                CSS
-              </div>
-              <div className="skill html px-4 py-1 border-2 border-[#999] rounded-md text-md text-[#999] font-bold hover:border-[--primary-color] hover:text-[--primary-color] cursor-pointer">
-                JAVASCRIPT
-              </div>
-              <div className="skill html px-4 py-1 border-2 border-[#999] rounded-md text-md text-[#999] font-bold hover:border-[--primary-color] hover:text-[--primary-color] cursor-pointer">
-                SASS
-              </div>
-              <div className="skill html px-4 py-1 border-2 border-[#999] rounded-md text-md text-[#999] font-bold hover:border-[--primary-color] hover:text-[--primary-color] cursor-pointer">
-                REACT~JS
-              </div>
-              <div className="skill html px-4 py-1 border-2 border-[#999] rounded-md text-md text-[#999] font-bold hover:border-[--primary-color] hover:text-[--primary-color] cursor-pointer">
-                TAILWIND CSS
-              </div>
-              <div className="skill html px-4 py-1 border-2 border-[#999] rounded-md text-md text-[#999] font-bold hover:border-[--primary-color] hover:text-[--primary-color] cursor-pointer">
-                FIGMA
-              </div>
-              <div className="skill html px-4 py-1 border-2 border-[#999] rounded-md text-md text-[#999] font-bold hover:border-[--primary-color] hover:text-[--primary-color] cursor-pointer">
-                GIT
-              </div>
-              <div className="skill html px-4 py-1 border-2 border-[#999] rounded-md text-md text-[#999] font-bold hover:border-[--primary-color] hover:text-[--primary-color] cursor-pointer">
-                GITHUB
-              </div>
+              {skills && skills.map((skill)=>(
+                <div key={crypto.randomUUID()} className="skill html px-4 py-1 border-2 border-[#999] rounded-md text-md text-[#999] font-bold hover:border-[--primary-color] hover:text-[--primary-color] cursor-pointer">{skill}</div>
+              ))}
             </div>
           </div>
 

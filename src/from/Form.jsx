@@ -1,8 +1,9 @@
-import React, { useRef} from 'react'
+import React, { useRef,useState} from 'react'
 import { Link } from 'react-router-dom';
 import emailjs from '@emailjs/browser'
 
 const Form = () => {
+  const [success, setSuccess] = useState(null);
 
 
   const form = useRef();
@@ -10,13 +11,13 @@ const Form = () => {
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm('service_gmk5knb', 'template_t0uryma', form.current, 'YeJR9Re_EDH4fYSYA')
+    emailjs.sendForm('service_mfk71g6','template_0qutehq', form.current, 'YeJR9Re_EDH4fYSYA')
       .then((result) => {
-          // console.log(result.text);
           e.target.reset()
-          alert('Email Sent !!! ')
+          setSuccess(true)
       }, (error) => {
           console.log(error.text);
+          setSuccess(false)
       });
   };
 
@@ -26,9 +27,9 @@ const Form = () => {
 
       <div className="fromCon md:w-[60%] p-4 md:p-8 bg-[--card-bg] rounded-2xl"  >
         <form className="flex flex-col gap-4" ref={form} onSubmit={sendEmail}>
-          <input type="text" name="your_name" autoComplete='off' placeholder="Name" className="p-2 rounded-lg outline-none border-none bg-[#4D555B]"/>
-          <input type="email" name="your_email" autoComplete='off' placeholder="E-mail" className="p-2 rounded-lg outline-none border-none bg-[#4D555B]" />
-          <textarea name="message" rows="6" placeholder="Type your message" className="p-2 rounded-lg outline-none border-none bg-[#4D555B]"></textarea>
+          <input type="text" name="name" required autoComplete='off' placeholder="Name" className="p-2 rounded-lg outline-none border-none bg-[#4D555B]"/>
+          <input type="email" name="email" required autoComplete='off' placeholder="E-mail" className="p-2 rounded-lg outline-none border-none bg-[#4D555B]" />
+          <textarea name="message" rows="6" placeholder="message" className="p-2 rounded-lg outline-none border-none bg-[#4D555B]"></textarea>
           <button type="submit" className="p-2 text-white rounded-lg bg-[--primary-color]">Send Message</button>
         </form>
       </div>
@@ -42,12 +43,19 @@ const Form = () => {
         If you are looking for a Web Developer with skills and experience, please feel free to get in touch with me..
         </p>
         <div className="conact">
-          <h2 className="text-[--primary-color] font-bold">WANT TO CALL ME?</h2>
+          <h2 className="text-[--primary-color] font-bold">WANT TO CALL ME ?</h2>
           <Link to='tel:9920489366' target="_blank" rel="noopener noreferrer" className="text-xl text-[--text-color] break-words">9920489366</Link>
         </div>
         <div className="email">
-          <h2 className="text-[--primary-color] font-bold">JUST WANT TO EMAIL ME?</h2>
+          <h2 className="text-[--primary-color] font-bold">JUST WANT TO EMAIL ME ?</h2>
           <Link to='mailto:shk.mohd.kaif@email.com'target="_blank" rel="noopener noreferrer" className="text-xl text-[--text-color] break-words">shk.mohd.kaif@gmail.com</Link>
+        </div>
+        <div className="email">
+          <h2 className="text-[--primary-color] font-bold">
+          { success &&
+              "Your message has been sent. We'll get back to you soon :)"
+          }
+          </h2>
         </div>
       </div>
     </div>
