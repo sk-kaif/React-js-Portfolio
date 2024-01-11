@@ -10,7 +10,7 @@ import js from './../assets/js.webp'
 import react from './../assets/react.webp'
 import pro from './../assets/credAll.webp'
 import { Link } from 'react-router-dom';
-import cv from './../assets/kaifShaik-Resume.pdf'
+import cv from './../assets/kaifShaikh-Resume.pdf'
 import { motion } from 'framer-motion';
 
 const Home = () => {

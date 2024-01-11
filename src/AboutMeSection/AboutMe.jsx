@@ -4,7 +4,7 @@ import {RiTwitterXFill} from 'react-icons/ri'
 import {IoMdContact} from 'react-icons/io'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import cv from './../assets/kaifShaik-Resume.pdf'
+import cv from './../assets/kaifShaikh-Resume.pdf'
 
 
 const AboutMe = () => {
