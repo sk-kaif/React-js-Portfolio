@@ -98,7 +98,7 @@ const Home = () => {
        </motion.div>
 
         <motion.div {...localAnimationn} className='cursor-pointer md:w-[48%] lg:w-3/12 lg:justify-center flex flex-col items-center gap-2 p-4 rounded-2xl cardBg'>
-          <Link to="https://github.com/kaif-shk" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center">
+          <Link to="https://github.com/sk-kaif" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center">
             <AiFillGithub className="text-8xl popUp" />
             <p className="font-semibold text-2xl">Github</p>
           </Link>

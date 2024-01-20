@@ -108,7 +108,8 @@ const AboutMe = () => {
               Get ~ Connect
             </h2>
             <div className="socialIcons flex justify-between items-center text-2xl md:text-3xl lg:text-4xl px-2 py-2">
-              <Link to="https://github.com/kaif-shk" target="_blank" rel="noopener noreferrer">
+              {/* <Link to="https://github.com/kaif-shk" target="_blank" rel="noopener noreferrer"> */}
+              <Link to="https://github.com/sk-kaif" target="_blank" rel="noopener noreferrer">
                 <AiOutlineGithub className="i" />
               </Link>
               <Link to="https://www.linkedin.com/in/shaikh-kaif-62ba3725b/" target="_blank" rel="noopener noreferrer">
