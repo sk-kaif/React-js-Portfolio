@@ -1,12 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BsArrowUpRight } from "react-icons/bs";
 import { VscGithub } from "react-icons/vsc";
 import projectsList from "./allProjects";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import uuid from "react-uuid";
 import { motion } from "framer-motion";
 
 const Projects = () => {
+  const location = useLocation()
+  useEffect(()=>{
+    window.scrollTo(0,0)
+  },[location])
+
   let localAnimationn = {
     initial: { opacity: 0, scale: 0.2 },
     viewport: { once: true },
