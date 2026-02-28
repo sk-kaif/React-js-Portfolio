@@ -1,0 +1,15 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: Kaifportfolio-app
+    restart: always
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env.local
+    environment:
+      - NODE_ENV=production
+      # Environment variables will be loaded from .env.local if present,
+      # or can be overridden here or by the host shell.
