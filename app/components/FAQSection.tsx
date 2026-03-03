@@ -1,31 +1,31 @@
-'use client';
+"use client";
 
-import { motion, useInView } from 'framer-motion';
-import { useState, useRef } from 'react';
-import { ChevronDown } from 'lucide-react';
-import { AnimatePresence } from 'framer-motion';
-import { EASE_SMOOTH } from '@/lib/motion';
+import { motion, useInView } from "framer-motion";
+import { useState, useRef } from "react";
+import { ChevronDown } from "lucide-react";
+import { AnimatePresence } from "framer-motion";
+import { EASE_SMOOTH } from "@/lib/motion";
 
 const faqData = [
   {
-    question: 'How do you ensure code quality?',
+    question: "How do you ensure code quality?",
     answer:
-      'I follow clean architecture principles, use TypeScript for strong typing, and write modular, maintainable code with proper documentation.',
+      "I follow clean architecture principles, use TypeScript for strong typing, and write modular, maintainable code with proper documentation.",
   },
   {
-    question: 'What is your development process?',
+    question: "What is your development process?",
     answer:
-      'I start by understanding the problem, then plan and build scalable solutions, integrate animations carefully, and finally deploy production-ready systems.',
+      "I start by understanding the problem, then plan and build scalable solutions, integrate animations carefully, and finally deploy production-ready systems.",
   },
   {
-    question: 'Do you provide post-launch support?',
+    question: "Do you provide post-launch support?",
     answer:
-      'Yes, I provide support and maintenance after launch to ensure stability, scalability, and smooth user experience.',
+      "Yes, I provide support and maintenance after launch to ensure stability, scalability, and smooth user experience.",
   },
   {
-    question: 'Can you work directly with my team?',
+    question: "Can you work directly with my team?",
     answer:
-      'Absolutely. I collaborate directly with clients and internal teams, providing clear communication and regular progress updates.',
+      "Absolutely. I collaborate directly with clients and internal teams, providing clear communication and regular progress updates.",
   },
 ];
 
@@ -70,10 +70,10 @@ export default function FAQSection() {
   };
 
   return (
-    <section className="bg-black text-white py-24 px-4" ref={ref}>
+    <section className="bg-black text-white py-16 md:py-24 px-4" ref={ref}>
       <div className="max-w-4xl mx-auto">
         {/* Header */}
-        <motion.div 
+        <motion.div
           className="text-center mb-16"
           variants={headerVariants}
           initial="hidden"
@@ -86,12 +86,13 @@ export default function FAQSection() {
             Frequently Asked Questions
           </h2>
           <p className="text-gray-300 text-lg leading-relaxed">
-            Clear answers to common questions about my work, process, and collaboration.
+            Clear answers to common questions about my work, process, and
+            collaboration.
           </p>
         </motion.div>
 
         {/* FAQ Items */}
-        <motion.div 
+        <motion.div
           className="space-y-4"
           variants={containerVariants}
           initial="hidden"
@@ -110,7 +111,9 @@ export default function FAQSection() {
                   className="w-full flex justify-between items-center p-4 text-left hover:bg-white/5 transition-colors"
                   onClick={() => setOpenIndex(isOpen ? null : i)}
                 >
-                  <span className="text-white font-medium">{item.question}</span>
+                  <span className="text-white font-medium">
+                    {item.question}
+                  </span>
                   <motion.span
                     animate={{ rotate: isOpen ? 180 : 0 }}
                     transition={{ duration: 0.3 }}
@@ -123,11 +126,11 @@ export default function FAQSection() {
                   {isOpen && (
                     <motion.div
                       initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: 'auto', opacity: 1 }}
+                      animate={{ height: "auto", opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
-                      transition={{ 
+                      transition={{
                         duration: 0.3,
-                        ease: 'easeOut' as const
+                        ease: "easeOut" as const,
                       }}
                       className="overflow-hidden"
                     >

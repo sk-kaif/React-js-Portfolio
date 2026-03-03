@@ -1,4 +1,4 @@
-"use client"
+"use client";
 // import { Layers, Zap, Rocket, UserCheck, CheckCircle } from "lucide-react";
 
 // export default function WhyWorkSection() {
@@ -141,7 +141,7 @@
 
 //         {/* Spotlight Grid */}
 //         <div className="relative">
-       
+
 //           <Spotlight className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
 //             {features.map((feature, index) => {
 //               const Icon = feature.icon;
@@ -176,7 +176,6 @@
 
 ////////////  ////////////////////////////////////////////////////
 
-
 // import {
 //   Layers,
 //   Zap,
@@ -205,7 +204,7 @@
 
 //         {/* TRUE BENTO GRID */}
 //         <Spotlight className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          
+
 //           {/* Small Card 1 */}
 //           <SpotLightItem className="lg:col-span-1">
 //          <MiniCard
@@ -218,7 +217,7 @@
 
 //           {/* Small Card 2 */}
 //           <SpotLightItem className="lg:col-span-1">
-            
+
 // <MiniCard
 //   icon={Zap}
 //   title="Performance"
@@ -277,7 +276,6 @@
 // //   );
 // // }
 
-
 // function MiniCard({
 //   icon: Icon,
 //   title,
@@ -300,9 +298,6 @@
 //     </div>
 //   );
 // }
-
-
-
 
 // /* ---------- Big Content Card ---------- */
 
@@ -327,7 +322,7 @@
 // function BigCard() {
 //   return (
 //     <div className="relative h-full rounded-xl border border-white/10 bg-gradient-to-b from-[#0b0b0b] to-[#161616] p-8 overflow-hidden">
-      
+
 //       {/* Subtle system bars */}
 //       <div className="absolute right-6 bottom-6 flex gap-2 opacity-20">
 //         {[40, 60, 80].map((h, i) => (
@@ -352,7 +347,6 @@
 //     </div>
 //   );
 // }
-
 
 // /* ---------- Abstract Patterns (CSS Only) ---------- */
 
@@ -406,15 +400,9 @@
 
 // // const _unused = AbstractPattern;
 
-
 "use client";
 
-import {
-  Layers,
-  Zap,
-  Rocket,
-  UserCheck,
-} from "lucide-react";
+import { Layers, Zap, Rocket, UserCheck } from "lucide-react";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Spotlight, SpotLightItem } from "@/components/uilayouts/spotlight";
@@ -458,16 +446,12 @@ export default function WhyWorkBentoSpotlight() {
   const isInView = useInView(ref, { once: true, margin: "-120px" });
 
   return (
-    <section className="bg-black py-24 px-4" ref={ref}>
+    <section className="bg-black py-16 md:py-24 px-4" ref={ref}>
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
-          animate={
-            isInView
-              ? { opacity: 1, y: 0 }
-              : undefined
-          }
+          animate={isInView ? { opacity: 1, y: 0 } : undefined}
           transition={{ duration: 0.7, ease: EASE_SMOOTH }}
           className="mb-16 max-w-2xl"
         >
@@ -490,7 +474,6 @@ export default function WhyWorkBentoSpotlight() {
           animate={isInView ? "visible" : "hidden"}
         >
           <Spotlight className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-
             <SpotLightItem className="lg:col-span-1">
               <motion.div variants={cardVariants}>
                 <MiniCard
@@ -540,7 +523,6 @@ export default function WhyWorkBentoSpotlight() {
                 />
               </motion.div>
             </SpotLightItem>
-
           </Spotlight>
         </motion.div>
       </div>
@@ -574,12 +556,8 @@ function MiniCard({
       <Icon className="h-7 w-7 text-indigo-400" />
 
       <div>
-        <h4 className="text-white font-medium mb-1">
-          {title}
-        </h4>
-        <p className="text-gray-400 text-sm leading-relaxed">
-          {description}
-        </p>
+        <h4 className="text-white font-medium mb-1">{title}</h4>
+        <p className="text-gray-400 text-sm leading-relaxed">{description}</p>
       </div>
     </motion.div>
   );
@@ -607,9 +585,8 @@ function BigCard() {
         </h3>
 
         <p className="text-gray-300 text-sm leading-relaxed mb-6">
-          I don’t just design interfaces. I engineer systems that
-          survive production, handle scale, and stay maintainable
-          long after launch.
+          I don’t just design interfaces. I engineer systems that survive
+          production, handle scale, and stay maintainable long after launch.
         </p>
 
         {/* Supporting points */}
@@ -641,4 +618,3 @@ function BigCard() {
     </motion.div>
   );
 }
-

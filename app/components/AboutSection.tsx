@@ -90,7 +90,7 @@
 //     <section id="about" className="relative bg-black py-28 px-4" ref={ref}>
 //       <div className="max-w-6xl mx-auto">
 //         {/* Glass container */}
-//         <motion.div 
+//         <motion.div
 //           className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-xl p-6 lg:p-14"
 //           variants={glassVariants}
 //           initial="hidden"
@@ -103,21 +103,21 @@
 //             initial="hidden"
 //             animate={isInView ? "visible" : "hidden"}
 //           >
-//             <motion.p 
+//             <motion.p
 //               className="text-xs uppercase tracking-widest text-gray-400 mb-3"
 //               variants={textVariants}
 //             >
 //               About
 //             </motion.p>
 
-//             <motion.h2 
+//             <motion.h2
 //               className="text-3xl lg:text-4xl font-semibold text-white mb-6"
 //               variants={textVariants}
 //             >
 //               Developer focused on clarity, performance, and delivery
 //             </motion.h2>
 
-//             <motion.p 
+//             <motion.p
 //               className="text-gray-300 leading-relaxed mb-4"
 //               variants={textVariants}
 //             >
@@ -125,7 +125,7 @@
 //               for startups and teams that value clarity and execution.
 //             </motion.p>
 
-//             <motion.p 
+//             <motion.p
 //               className="text-gray-300 leading-relaxed mb-6"
 //               variants={textVariants}
 //             >
@@ -133,7 +133,7 @@
 //               reliable products — without unnecessary complexity or visual noise.
 //             </motion.p>
 
-//             <motion.p 
+//             <motion.p
 //               className="text-gray-300 leading-relaxed mb-6"
 //               variants={textVariants}
 //             >
@@ -142,7 +142,7 @@
 //             </motion.p>
 
 //             {/* Trust bullets */}
-//             <motion.ul 
+//             <motion.ul
 //               className="space-y-3 text-sm text-gray-400"
 //               variants={listVariants}
 //               initial="hidden"
@@ -156,7 +156,7 @@
 //           </motion.div>
 
 //           {/* RIGHT — Visual anchor */}
-//           <motion.div 
+//           <motion.div
 //             className="flex justify-center lg:justify-end"
 //             variants={imageVariants}
 //             initial="hidden"
@@ -178,19 +178,16 @@
 //   );
 // }
 
+"use client";
 
-
-
-'use client';
-
-import { motion, useInView } from 'framer-motion';
-import { useRef } from 'react';
-import Image from 'next/image';
-import { EASE_SMOOTH } from '@/lib/motion';
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+import Image from "next/image";
+import { EASE_SMOOTH } from "@/lib/motion";
 
 export default function AboutSection() {
   const ref = useRef<HTMLElement | null>(null);
-  const isInView = useInView(ref, { once: true, margin: '-100px' });
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   // Container orchestrates child animations
   const containerVariants = {
@@ -240,7 +237,7 @@ export default function AboutSection() {
       y: 0,
       transition: {
         duration: 0.6,
-        ease: 'easeOut' as const,
+        ease: "easeOut" as const,
       },
     },
   };
@@ -264,7 +261,7 @@ export default function AboutSection() {
       x: 0,
       transition: {
         duration: 0.5,
-        ease: 'easeOut' as const,
+        ease: "easeOut" as const,
       },
     },
   };
@@ -273,20 +270,20 @@ export default function AboutSection() {
     <section
       id="about"
       ref={ref}
-      className="relative bg-black py-28 px-4"
+      className="relative bg-black py-16 md:py-28 px-4"
     >
       <div className="max-w-6xl mx-auto">
         <motion.div
           className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-xl p-6 lg:p-14"
           variants={glassVariants}
           initial="hidden"
-          animate={isInView ? 'visible' : 'hidden'}
+          animate={isInView ? "visible" : "hidden"}
         >
           {/* LEFT — Content */}
           <motion.div
             variants={containerVariants}
             initial="hidden"
-            animate={isInView ? 'visible' : 'hidden'}
+            animate={isInView ? "visible" : "hidden"}
           >
             <motion.p
               className="text-xs uppercase font-mono tracking-widest text-gray-400 mb-3"
@@ -307,7 +304,8 @@ export default function AboutSection() {
               variants={textVariants}
             >
               I&apos;m a full-stack web developer building production-ready
-              applications for startups and teams that value clarity and execution.
+              applications for startups and teams that value clarity and
+              execution.
             </motion.p>
 
             <motion.p
@@ -315,22 +313,23 @@ export default function AboutSection() {
               variants={textVariants}
             >
               I work with React, Next.js, and modern backend systems to deliver
-              reliable products — without unnecessary complexity or visual noise.
+              reliable products — without unnecessary complexity or visual
+              noise.
             </motion.p>
 
             <motion.p
               className="text-gray-300 leading-relaxed mb-6"
               variants={textVariants}
             >
-              I&apos;m a good fit if you need a developer who can take ownership,
-              communicate clearly, and ship without hand-holding.
+              I&apos;m a good fit if you need a developer who can take
+              ownership, communicate clearly, and ship without hand-holding.
             </motion.p>
 
             <motion.ul
               className="space-y-3 text-sm text-gray-400"
               variants={listVariants}
               initial="hidden"
-              animate={isInView ? 'visible' : 'hidden'}
+              animate={isInView ? "visible" : "hidden"}
             >
               <motion.li variants={listItemVariants}>
                 • Direct communication — no middlemen
@@ -352,7 +351,7 @@ export default function AboutSection() {
             className="flex justify-center lg:justify-end"
             variants={imageVariants}
             initial="hidden"
-            animate={isInView ? 'visible' : 'hidden'}
+            animate={isInView ? "visible" : "hidden"}
           >
             <div className="relative w-64 h-80 rounded-xl overflow-hidden border border-white/10 bg-black/40">
               <Image

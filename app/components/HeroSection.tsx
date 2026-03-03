@@ -57,7 +57,6 @@ import { EASE_SMOOTH } from "@/lib/motion";
 //   );
 // }
 
-
 //////////////////////////////////////////////////
 
 // export default function HeroSection() {
@@ -142,9 +141,7 @@ import { EASE_SMOOTH } from "@/lib/motion";
 //   );
 // }
 
-
 ////////    ////////////////////////////////////
-
 
 // import React from 'react';
 // import Earth from '@/components/uilayouts/globe';
@@ -197,8 +194,6 @@ import { EASE_SMOOTH } from "@/lib/motion";
 //   );
 // }
 
-
-
 export default function HeroSection() {
   // Animation variants for staggered entrance
   const containerVariants = {
@@ -250,7 +245,10 @@ export default function HeroSection() {
   };
 
   return (
-    <section id="home" className="relative min-h-screen bg-black flex items-center justify-center px-6 overflow-hidden">
+    <section
+      id="home"
+      className="relative min-h-screen bg-black flex items-center justify-center px-6 overflow-hidden"
+    >
       {/* Subtle grid background */}
       <motion.div
         className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff0a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0a_1px,transparent_1px)] bg-[size:36px_36px] opacity-20"
@@ -264,7 +262,7 @@ export default function HeroSection() {
 
       {/* Content */}
       <motion.div
-        className="relative z-10 max-w-5xl text-center"
+        className="relative z-10 max-w-5xl text-center pt-16"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
@@ -306,11 +304,13 @@ export default function HeroSection() {
 
         {/* CTA */}
         <motion.div
-          className="mt-10 flex flex-col items-center sm:flex-row justify-center gap-4"
+          className="md:mt-10 mt-6 flex md:flex-col items-center sm:flex-row justify-center gap-2 md:gap-4"
           variants={buttonVariants}
         >
           <CTAButton href="#contact">Start a project</CTAButton>
-          <CTAButton variant="secondary" href="#projects">View work</CTAButton>
+          <CTAButton variant="secondary" href="#projects">
+            View work
+          </CTAButton>
         </motion.div>
       </motion.div>
     </section>

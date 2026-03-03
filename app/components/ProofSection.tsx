@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { motion, useInView } from 'framer-motion';
-import { useRef } from 'react';
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 import { Briefcase, Code2, ShieldCheck, MessageSquare } from "lucide-react";
 import { EASE_SMOOTH } from "@/lib/motion";
 
@@ -67,7 +67,7 @@ export default function ProofSection() {
   };
 
   return (
-    <section ref={ref} className="relative bg-black py-24 px-4">
+    <section ref={ref} className="relative bg-black py-16 md:py-24 px-4">
       <div className="max-w-6xl mx-auto">
         <motion.div
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"

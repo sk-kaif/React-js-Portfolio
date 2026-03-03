@@ -1,12 +1,8 @@
 "use client";
 
-import { motion, useInView } from 'framer-motion';
+import { motion, useInView } from "framer-motion";
 import React, { MouseEvent, useRef, useState } from "react";
-import {
-  LayoutTemplate,
-  MonitorSmartphone,
-  ServerCog,
-} from "lucide-react";
+import { LayoutTemplate, MonitorSmartphone, ServerCog } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { EASE_SMOOTH } from "@/lib/motion";
 
@@ -41,7 +37,7 @@ function SpotlightCard({
       onMouseLeave={() => setHovered(false)}
       className={cn(
         "group relative overflow-hidden rounded-2xl border border-white/10 bg-[#0b0b0b]",
-        className
+        className,
       )}
     >
       {hovered && (
@@ -152,17 +148,13 @@ function ServiceCard({
             {label}
           </span>
 
-          <h3 className="mt-3 text-xl font-semibold text-white">
-            {title}
-          </h3>
+          <h3 className="mt-3 text-xl font-semibold text-white">{title}</h3>
 
           <p className="mt-3 text-sm text-gray-400 leading-relaxed">
             {description}
           </p>
 
-          <div className="mt-auto relative h-20">
-            {visual}
-          </div>
+          <div className="mt-auto relative h-20">{visual}</div>
 
           <Icon className="absolute top-6 right-6 h-9 w-9 text-white/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         </div>
@@ -202,9 +194,9 @@ export default function ServicesSpotlightBento() {
   };
 
   return (
-    <section id="services" className="bg-black py-24 px-4" ref={ref}>
+    <section id="services" className="bg-black py-16 md:py-24 px-4" ref={ref}>
       <div className="max-w-6xl mx-auto">
-        <motion.div 
+        <motion.div
           className="text-center max-w-2xl mx-auto mb-16"
           variants={headerVariants}
           initial="hidden"
@@ -217,11 +209,12 @@ export default function ServicesSpotlightBento() {
             Services built for real products
           </h2>
           <p className="text-gray-300 text-lg">
-            I design and engineer fast, scalable, production-ready web applications.
+            I design and engineer fast, scalable, production-ready web
+            applications.
           </p>
         </motion.div>
 
-        <motion.div 
+        <motion.div
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
           variants={containerVariants}
           initial="hidden"

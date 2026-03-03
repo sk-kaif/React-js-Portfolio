@@ -132,7 +132,7 @@ export default function Navbar() {
             ))}
             <div className="flex items-center gap-4 ml-4">
               <a
-                href="/KaifShaikh-Resume.pdf (1).pdf"
+                href="/KaifShaikh-Resume.pdf"
                 download="KaifShaikh-Resume.pdf"
                 className="
                   group relative flex items-center gap-2 
@@ -210,7 +210,7 @@ export default function Navbar() {
             ))}
             <div className="px-3 py-4 space-y-4">
               <a
-                href="/KaifShaikh-Resume.pdf (1).pdf"
+                href="/KaifShaikh-Resume.pdf"
                 download="KaifShaikh-Resume.pdf"
                 className="
                   flex items-center justify-center gap-3 w-full 

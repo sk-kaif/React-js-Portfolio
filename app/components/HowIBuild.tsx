@@ -108,21 +108,21 @@
 //           initial="hidden"
 //           animate={isInView ? "visible" : "hidden"}
 //         >
-//           <motion.p 
+//           <motion.p
 //             className="text-gray-400 text-sm font-mono uppercase tracking-wide mb-4"
 //             variants={textVariants}
 //           >
 //             How I Build
 //           </motion.p>
 
-//           <motion.h2 
+//           <motion.h2
 //             className="text-white text-4xl md:text-5xl font-bold mb-6 leading-tight"
 //             variants={textVariants}
 //           >
 //             Systems, not just interfaces
 //           </motion.h2>
 
-//           <motion.p 
+//           <motion.p
 //             className="text-gray-300 text-lg leading-relaxed mb-6"
 //             variants={textVariants}
 //           >
@@ -130,7 +130,7 @@
 //             predictable behavior, and production readiness from day one.
 //           </motion.p>
 
-//           <motion.ul 
+//           <motion.ul
 //             className="space-y-3 text-gray-400 text-sm"
 //             variants={listVariants}
 //             initial="hidden"
@@ -228,19 +228,10 @@
 // });
 // GlassCircle.displayName = "GlassCircle";
 
-
-
 "use client";
 
 import React, { useRef } from "react";
-import {
-  Code,
-  Layers,
-  Activity,
-  Layout,
-  Cpu,
-  Shield,
-} from "lucide-react";
+import { Code, Layers, Activity, Layout, Cpu, Shield } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
 import { AnimatedBeam } from "@/components/uilayouts/animated-beam";
 import { cn } from "@/lib/utils";
@@ -273,8 +264,6 @@ const textItem = {
     },
   },
 };
-
-
 
 const containerVariants = {
   hidden: {},
@@ -355,7 +344,7 @@ const GlassCircle = React.forwardRef<
         "group relative flex items-center justify-center rounded-full",
         "border border-white/15 bg-white/5 backdrop-blur-md text-gray-200",
         "transition-colors hover:bg-white/10",
-        large ? "h-16 w-16" : "h-12 w-12"
+        large ? "h-16 w-16" : "h-12 w-12",
       )}
     >
       {icon}
@@ -382,9 +371,8 @@ export default function HowIBuild() {
   const reduceMotion = useReducedMotion();
 
   return (
-    <section className="bg-black py-24 px-4">
+    <section className="bg-black py-16 md:py-24 px-4">
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-
         {/* Left Content */}
         {/* <div>
           <p className="text-gray-400 text-sm font-mono uppercase tracking-wide mb-4">
@@ -409,47 +397,44 @@ export default function HowIBuild() {
           </ul>
         </div> */}
 
-<motion.div
-  variants={textContainer}
-  initial="hidden"
-  whileInView="show"
-  viewport={{ once: true, margin: "-80px" }}
->
-  <motion.p
-    variants={textItem}
-    className="text-gray-400 text-sm font-mono uppercase tracking-wide mb-4"
-  >
-    How I Build
-  </motion.p>
+        <motion.div
+          variants={textContainer}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-80px" }}
+        >
+          <motion.p
+            variants={textItem}
+            className="text-gray-400 text-sm font-mono uppercase tracking-wide mb-4"
+          >
+            How I Build
+          </motion.p>
 
-  <motion.h2
-    variants={textItem}
-    className="text-white text-4xl md:text-5xl font-bold mb-6 leading-tight"
-  >
-    Systems, not just interfaces
-  </motion.h2>
+          <motion.h2
+            variants={textItem}
+            className="text-white text-4xl md:text-5xl font-bold mb-6 leading-tight"
+          >
+            Systems, not just interfaces
+          </motion.h2>
 
-  <motion.p
-    variants={textItem}
-    className="text-gray-300 text-lg leading-relaxed mb-6"
-  >
-    Every project is engineered as a cohesive system —
-    predictable behavior, clean architecture, and production
-    readiness from day one.
-  </motion.p>
+          <motion.p
+            variants={textItem}
+            className="text-gray-300 text-lg leading-relaxed mb-6"
+          >
+            Every project is engineered as a cohesive system — predictable
+            behavior, clean architecture, and production readiness from day one.
+          </motion.p>
 
-  <motion.ul
-    variants={textItem}
-    className="space-y-3 text-gray-400 text-sm"
-  >
-    <li>• Architecture before implementation</li>
-    <li>• Performance-aware UI and rendering</li>
-    <li>• Motion used only when it improves clarity</li>
-    <li>• Deployment and scaling considered early</li>
-  </motion.ul>
-</motion.div>
-
-
+          <motion.ul
+            variants={textItem}
+            className="space-y-3 text-gray-400 text-sm"
+          >
+            <li>• Architecture before implementation</li>
+            <li>• Performance-aware UI and rendering</li>
+            <li>• Motion used only when it improves clarity</li>
+            <li>• Deployment and scaling considered early</li>
+          </motion.ul>
+        </motion.div>
 
         {/* System Diagram */}
         <motion.div
@@ -462,7 +447,6 @@ export default function HowIBuild() {
             rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md p-6"
         >
           <div className="flex h-full w-full flex-col justify-between">
-
             {/* Top */}
             <div className="flex justify-between">
               <GlassCircle
@@ -512,11 +496,36 @@ export default function HowIBuild() {
           {/* Beams (subtle, explanatory) */}
           {!reduceMotion && (
             <>
-              <AnimatedBeam containerRef={containerRef} fromRef={codeRef} toRef={coreRef} dotted />
-              <AnimatedBeam containerRef={containerRef} fromRef={uiRef} toRef={coreRef} dotted />
-              <AnimatedBeam containerRef={containerRef} fromRef={motionRef} toRef={coreRef} dotted />
-              <AnimatedBeam containerRef={containerRef} fromRef={runtimeRef} toRef={coreRef} dotted />
-              <AnimatedBeam containerRef={containerRef} fromRef={frameworkRef} toRef={coreRef} dotted />
+              <AnimatedBeam
+                containerRef={containerRef}
+                fromRef={codeRef}
+                toRef={coreRef}
+                dotted
+              />
+              <AnimatedBeam
+                containerRef={containerRef}
+                fromRef={uiRef}
+                toRef={coreRef}
+                dotted
+              />
+              <AnimatedBeam
+                containerRef={containerRef}
+                fromRef={motionRef}
+                toRef={coreRef}
+                dotted
+              />
+              <AnimatedBeam
+                containerRef={containerRef}
+                fromRef={runtimeRef}
+                toRef={coreRef}
+                dotted
+              />
+              <AnimatedBeam
+                containerRef={containerRef}
+                fromRef={frameworkRef}
+                toRef={coreRef}
+                dotted
+              />
             </>
           )}
         </motion.div>

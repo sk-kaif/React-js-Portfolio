@@ -141,7 +141,7 @@
 //     <section className="bg-black py-24 px-4" ref={ref}>
 //       <div className="max-w-5xl mx-auto">
 //         {/* Header */}
-//         <motion.div 
+//         <motion.div
 //           className="text-center max-w-2xl mx-auto mb-16"
 //           variants={headerVariants}
 //           initial="hidden"
@@ -159,7 +159,7 @@
 //         </motion.div>
 
 //         {/* Steps */}
-//         <motion.div 
+//         <motion.div
 //           className="grid grid-cols-1 gap-6"
 //           variants={containerVariants}
 //           initial="hidden"
@@ -197,10 +197,6 @@
 //     </section>
 //   );
 // }
-
-
-
-
 
 "use client";
 
@@ -245,7 +241,7 @@ function SoftSpotlight({
       }}
       className={cn(
         "relative overflow-hidden rounded-xl border border-white/10 bg-[#0b0b0b]",
-        className
+        className,
       )}
     >
       {hovered && (
@@ -299,9 +295,7 @@ function StepCard({
         <div className="flex gap-5 items-start">
           {/* Step Indicator */}
           <div className="flex flex-col items-center shrink-0">
-            <span className="font-mono text-xs text-gray-400">
-              {step}
-            </span>
+            <span className="font-mono text-xs text-gray-400">{step}</span>
 
             <motion.div
               whileHover={{ scale: 1.05 }}
@@ -315,9 +309,7 @@ function StepCard({
 
           {/* Content */}
           <div>
-            <h3 className="text-white text-lg font-semibold mb-2">
-              {title}
-            </h3>
+            <h3 className="text-white text-lg font-semibold mb-2">{title}</h3>
             <p className="text-gray-400 text-sm leading-relaxed max-w-md">
               {description}
             </p>
@@ -363,7 +355,7 @@ export default function HowItWorksSection() {
   };
 
   return (
-    <section className="bg-black py-24 px-4" ref={ref}>
+    <section className="bg-black py-16 md:py-24 px-4" ref={ref}>
       <div className="max-w-5xl mx-auto">
         {/* Header */}
         <motion.div
@@ -379,7 +371,8 @@ export default function HowItWorksSection() {
             A clear, predictable process
           </h2>
           <p className="text-gray-300 text-lg">
-            No surprises. No confusion. Just a structured workflow from idea to launch.
+            No surprises. No confusion. Just a structured workflow from idea to
+            launch.
           </p>
         </motion.div>
 
