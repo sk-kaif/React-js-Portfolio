@@ -17,7 +17,7 @@ export default function ProofSection() {
       icon: Briefcase,
       title: "Real Experience",
       description:
-        "6+ months of hands-on internship experience building production-ready features.",
+        "2 years of hands-on experience building production-ready features.",
     },
     {
       icon: Code2,
